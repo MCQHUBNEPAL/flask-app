@@ -1,0 +1,28 @@
+name: Deploy to Deta
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to deploy from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Deta CLI
+        run: |
+          curl -fsSL https://get.deta.dev/cli.sh | sh
+
+      - name: Deploy to Deta
+        run: |
+          deta login --token ${{ secrets.DETA_TOKEN }}
+          deta deploy
