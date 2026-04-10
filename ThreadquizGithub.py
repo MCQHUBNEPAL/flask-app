@@ -161,7 +161,7 @@ async def send_mcqs(
         )
 
         if mcq.explanation:
-            escaped = escape_markdown_v2(f"Explanation: {mcq.explanation}")
+            escaped = escape_markdown_v2(f"Explanation:\n {mcq.explanation}")
             await context.bot.send_message(
                 chat_id=chat_id,
                 text=f"||{escaped}||",
