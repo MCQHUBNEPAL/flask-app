@@ -10,9 +10,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandl
 # =========================
 # CONFIG
 # =========================
-import os
-BOT_TOKEN = os.getenv("7839238761:AAHwQHP1w2S5bABXrRya9logE4i8W3-oWzY")
-
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Dynamic topic config
 ACTIVE_TOPIC_ID: Optional[int] = None
