@@ -11,7 +11,9 @@ import os
 # CONFIG
 # =========================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN is missing in environment variables.")
+    
 # Dynamic topic config
 ACTIVE_TOPIC_ID: Optional[int] = None
 ACTIVE_TOPIC_NAME: Optional[str] = None
